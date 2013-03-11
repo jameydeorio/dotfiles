@@ -1,0 +1,4 @@
+This is a personal repo to keep my dotfiles oganized.
+
+The python script just finds all *.symlink files and symlinks them
+to the home folder.
