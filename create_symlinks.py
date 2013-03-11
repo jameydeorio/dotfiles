@@ -2,14 +2,17 @@
 
 import os
 
-files_to_symlink = []
-curdir = os.path.abspath('.')
+
 home = os.path.expanduser('~')
 
-for root, dirs, files in os.walk(curdir):
-	for filename in files:
-		if filename.endswith('.symlink'):
-			new_filename = filename[:-8]
-			file_path = root + '/' + filename
-			os.symlink(file_path, home + '/.' + new_filename)
-			print "Created symlink to {0} @ {1}!".format(file_path, home + '/.' + new_filename)
+for root, dirs, files in os.walk('.'):
+    for filename in files:
+        if filename.endswith('.symlink'):
+            new_file = home + '/.' + filename[:-8]
+            file_path = root + '/' + filename
+            if os.path.isfile(new_file):
+                print "Skipped existing symlink to {0} @ {1}!".format(file_path, new_file)
+            else:
+                os.symlink(file_path, new_file)
+                print "Created symlink to {0} @ {1}!".format(file_path, new_file)
+
