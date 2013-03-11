@@ -1,0 +1,15 @@
+[ui]
+username = Jamey DeOrio <jameyd@darkhorse.com>
+[diff]
+git = 1
+[extensions]
+hgext.color =
+hgext.hgk =
+rebase =
+reviewboard = /usr/local/share/mercurial-reviewboard
+[reviewboard]
+server = http://rb.darkhorse.com/
+target_groups = devs
+launch_webbrowser = true
+[alias]
+ocd = !echo "\nSTATUS\n---------------"; $HG st; echo "\nOUTGOING\n---------------"; $HG out; echo "\nINCOMING\n---------------"; $HG in; echo;

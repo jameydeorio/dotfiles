@@ -1,0 +1,10 @@
+[user]
+    name = Jamey DeOrio
+    email = jameyd@darkhorse.com
+[color]
+    ui = true
+[alias]
+    st = status
+    co = checkout
+    l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset' --all
+    ci = commit

@@ -1,0 +1,76 @@
+export ZSH=$HOME/dotfiles/oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="zemm-blinks"
+
+alias s="subl"
+
+alias apache_start="sudo launchctl load /Library/LaunchDaemons/com.darkhorse.httpd.plist"
+alias apache_stop="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.httpd.plist"
+alias bounce_apache="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.httpd.plist; sudo launchctl load /Library/LaunchDaemons/com.darkhorse.httpd.plist"
+
+alias bounce_mysql="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.mysqld.plist; sudo launchctl load /Library/LaunchDaemons/com.darkhorse.mysqld.plist"
+
+alias pg_start="sudo launchctl load /Library/LaunchDaemons/com.darkhorse.postgresql.plist"
+alias pg_stop="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.postgresql.plist"
+alias bounce_postgres="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.postgresql.plist; sudo launchctl load /Library/LaunchDaemons/com.darkhorse.postgresql.plist"
+
+alias bounce_memcache="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.memcached.plist; sudo launchctl load /Library/LaunchDaemons/com.darkhorse.memcached.plist"
+alias bounce_stack="bounce_mysql; bounce_postgres; bounce_apache; bounce_memcache;"
+
+alias unpyc='find . -name "*.pyc" | xargs rm'
+
+alias cddh="cd ~/dev/dh"
+
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias pgbounce='pgstop && pgstart'
+
+alias mongostart='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
+alias mongostop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
+alias mongobounce='mongostop && mongostart'
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git, mercurial)
+
+source $ZSH/oh-my-zsh.sh
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Customize to your needs...
+#set -o vi
+
+export EDITOR='subl -w'
+
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+#export YGL_PYTHON_EXE=/usr/local/darkhorse/python/bin/python
+#export YGL_VIRTUALENV_PY_DIR=/www/
+
+#export ARCHFLAG='-arch i386'
+#export CFLAGS='-arch i386'
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:~/bin
+
+export PATH=/usr/local/darkhorse/python/bin:/usr/local/postgresql/bin:/usr/local/darkhorse/php/bin:/usr/local/darkhorse/mysql/bin:/usr/local/darkhorse/apache2/bin:/usr/local/darkhorse/bin:/Volumes/WorkHD/Users/jameyd/bin:$PATH
+

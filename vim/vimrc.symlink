@@ -1,0 +1,68 @@
+syntax on
+set nocompatible
+filetype plugin on
+
+let mapleader=","
+
+"call pathogen#infect()
+"call pathogen#helptags()
+
+" set background=dark
+" colorscheme solarized
+
+" Formatting
+set nu
+set ruler
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set showcmd
+set history=50
+set autoindent
+set copyindent
+set backspace=indent,eol,start
+set smartindent
+
+" Folding
+set foldcolumn=6
+set foldmethod=indent
+set foldlevel=99
+set foldnestmax=10
+set foldenable
+
+" Remove trainling whitespace
+nnoremap <F5> :%s/\s\+$//<CR>
+
+" Toggle spell check
+map <leader>s :set spell! spelllang=en_us<CR>
+
+" Toggle search highlighting
+set hlsearch
+noremap <F4> :set hlsearch! hlsearch?<CR>
+
+" Easy newlines in normal mode
+nnoremap <S-Return> O<Esc>
+nnoremap <CR> o<Esc>
+
+" Open server
+nnoremap <F2> :e ftp://ftp.antehero.com//<CR>
+
+" Get to this setup file
+nnoremap <F12> :tabnew ~/.vimrc<CR>
+
+" Plugin stuff
+nnoremap <leader>f :FufFile<CR>
+nnoremap <leader>e :NERDTree<CR>
+
+" File settings
+
+au FileType xhtml,html,htm,php,xml setlocal tabstop=2
+au FileType xhtml,html,htm,php,xml setlocal shiftwidth=2
+au FileType xhtml,html,htm,php,xml setlocal softtabstop=2
+
+au FileType c,h,java,js setlocal mps+==:;
+au FileType java,js setlocal smartindent
+
+au BufRead,BufNewFile *.scala set filetype=scala
+au! Syntax scala source /usr/share/vim/addons/syntax/scala.vim
