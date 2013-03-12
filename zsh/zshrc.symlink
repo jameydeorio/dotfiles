@@ -59,7 +59,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Customize to your needs...
 #set -o vi
 
-export EDITOR='subl -w'
+#export EDITOR='subl -w'
+export EDITOR='vim'
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
