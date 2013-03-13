@@ -13,10 +13,10 @@ let mapleader=","
 " Formatting
 set nu
 set ruler
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 set showcmd
 set history=50
 set autoindent
