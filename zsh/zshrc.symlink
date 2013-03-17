@@ -71,7 +71,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 #export ARCHFLAG='-arch i386'
 #export CFLAGS='-arch i386'
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:~/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:~/bin
 
 export PATH=/Volumes/WorkHD/Users/jameyd/bin:$PATH
 #export PATH=/usr/local/darkhorse/python/bin:/usr/local/postgresql/bin:/usr/local/darkhorse/php/bin:/usr/local/darkhorse/mysql/bin:/usr/local/darkhorse/apache2/bin:/usr/local/darkhorse/bin:/Volumes/WorkHD/Users/jameyd/bin:$PATH
