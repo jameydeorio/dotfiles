@@ -32,7 +32,7 @@ set foldlevel=99
 set foldnestmax=10
 set foldenable
 
-" Remove trainling whitespace
+" Remove trailing whitespace
 nnoremap <F5> :%s/\s\+$//<CR>
 
 " Toggle spell check
@@ -45,12 +45,6 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 " Easy newlines in normal mode
 nnoremap <S-Return> O<Esc>
 nnoremap <CR> o<Esc>
-
-" Open server
-nnoremap <F2> :e ftp://ftp.antehero.com//<CR>
-
-" Get to this setup file
-nnoremap <F12> :tabnew ~/.vimrc<CR>
 
 " Plugin stuff
 map <leader>e :NERDTreeToggle<CR>
@@ -65,7 +59,7 @@ au FileType xhtml,html,htm,php,xml setlocal shiftwidth=2
 au FileType xhtml,html,htm,php,xml setlocal softtabstop=2
 
 au FileType c,h,java,js setlocal mps+==:;
-au FileType java,js setlocal smartindent
 
 au BufRead,BufNewFile *.scala set filetype=scala
 au! Syntax scala source /usr/share/vim/addons/syntax/scala.vim
+
