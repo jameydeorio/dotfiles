@@ -1,11 +1,12 @@
 syntax on
 set nocompatible
 filetype plugin on
+set mouse=a
 
 let mapleader=","
 
-"call pathogen#infect()
-"call pathogen#helptags()
+call pathogen#infect()
+call pathogen#helptags()
 
 " set background=dark
 " colorscheme solarized
@@ -52,8 +53,10 @@ nnoremap <F2> :e ftp://ftp.antehero.com//<CR>
 nnoremap <F12> :tabnew ~/.vimrc<CR>
 
 " Plugin stuff
-nnoremap <leader>f :FufFile<CR>
-nnoremap <leader>e :NERDTree<CR>
+map <leader>e :NERDTreeToggle<CR>
+autocmd vimenter * if !argc() | NERDTree | endif 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " File settings
 
