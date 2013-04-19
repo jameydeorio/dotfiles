@@ -65,3 +65,10 @@ export EDITOR='vim'
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+today=`date "+%m/%d"`
+echo
+grep $today /usr/share/calendar/calendar.music
+grep $today /usr/share/calendar/calendar.history
+grep $today /usr/share/calendar/calendar.computer
+grep $today /usr/share/calendar/calendar.birthday
+
