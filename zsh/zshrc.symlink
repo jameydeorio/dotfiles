@@ -58,7 +58,8 @@ plugins=(git, mercurial)
 
 source $ZSH/oh-my-zsh.sh
 
-source /usr/local/share/python/virtualenvwrapper.sh
+[ -d /opt/boxen ] && source /opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/share/python
+[ -f /usr/local/share/python/virtualenvwrapper.sh ] && source /usr/local/share/python/virtualenvwrapper.sh
 
 #export EDITOR='subl -w'
 export EDITOR='vim'
