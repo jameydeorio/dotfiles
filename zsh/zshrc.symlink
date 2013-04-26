@@ -1,6 +1,8 @@
 export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:~/bin
 export PATH=/Volumes/WorkHD/Users/jameyd/bin:$PATH
 
+source ~/.profile
+
 export ZSH=$HOME/dotfiles/oh-my-zsh
 
 # Set name of the theme to load.
@@ -33,6 +35,7 @@ alias cddh="cd ~/dev/dh"
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias pgbounce='pgstop && pgstart'
+[ -d /opt/boxen ] && alias pgbounce='killall postgres'
 
 alias mongostart='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
 alias mongostop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
@@ -60,7 +63,7 @@ plugins=(git, mercurial)
 
 source $ZSH/oh-my-zsh.sh
 
-[ -d /opt/boxen ] && source /opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/share/python
+[ -d /opt/boxen ] && source /opt/boxen/homebrew/share/python/virtualenvwrapper.sh
 [ -f /usr/local/share/python/virtualenvwrapper.sh ] && source /usr/local/share/python/virtualenvwrapper.sh
 
 #export EDITOR='subl -w'
@@ -75,4 +78,3 @@ grep $today /usr/share/calendar/calendar.history
 grep $today /usr/share/calendar/calendar.computer
 grep $today /usr/share/calendar/calendar.birthday
 
-source ~/.profile
