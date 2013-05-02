@@ -52,11 +52,10 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-" File settings
-
-au FileType xhtml,html,htm,php,xml setlocal tabstop=2
-au FileType xhtml,html,htm,php,xml setlocal shiftwidth=2
-au FileType xhtml,html,htm,php,xml setlocal softtabstop=2
+" Filetype settings
+au FileType xhtml,html,htm,php,xml,ruby setlocal tabstop=2
+au FileType xhtml,html,htm,php,xml,ruby setlocal shiftwidth=2
+au FileType xhtml,html,htm,php,xml,ruby setlocal softtabstop=2
 
 au FileType c,h,java,js setlocal mps+==:;
 
