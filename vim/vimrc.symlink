@@ -1,23 +1,37 @@
-syntax on
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+set guifont=Source\ Code\ Pro\ for\ Powerline
+set rtp+={repository_root}/powerline/bindings/vim
+set laststatus=2
+
+filetype plugin indent on
+
+filetype on
+syntax on
 filetype plugin on
-set mouse=a
 
 let mapleader=","
 
-call pathogen#infect()
-call pathogen#helptags()
-
-" set background=dark
+set background=dark
 colorscheme slate
 
 " Formatting
 set nu
 set ruler
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set showcmd
 set history=50
 set autoindent
@@ -53,12 +67,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Filetype settings
+filetype indent on
 au FileType xhtml,html,htm,php,xml,ruby setlocal tabstop=2
 au FileType xhtml,html,htm,php,xml,ruby setlocal shiftwidth=2
 au FileType xhtml,html,htm,php,xml,ruby setlocal softtabstop=2
+au FileType python setlocal tabstop=4
+au FileType python setlocal shiftwidth=4
+au FileType python setlocal softtabstop=4
 
 au FileType c,h,java,js setlocal mps+==:;
 
 au BufRead,BufNewFile *.scala set filetype=scala
 au! Syntax scala source /usr/share/vim/addons/syntax/scala.vim
-
