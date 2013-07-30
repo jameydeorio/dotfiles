@@ -1,15 +1,33 @@
 [ui]
 username = Jamey DeOrio <jameyd@darkhorse.com>
+verbose = True
+style = compact
+
 [diff]
 git = 1
+
 [extensions]
+pager =
+graphlog = 
 hgext.color =
 hgext.hgk =
 rebase =
 reviewboard = /usr/local/share/mercurial-reviewboard
+
+[pager]
+pager = LESS='FRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff, l, slog, glog, nlog, sglog
+
 [reviewboard]
 server = http://rb.darkhorse.com/
 target_groups = devs
 launch_webbrowser = true
+
 [alias]
 ocd = !echo "\nSTATUS\n---------------"; $HG st; echo "\nOUTGOING\n---------------"; $HG out; echo "\nINCOMING\n---------------"; $HG in; echo;
+log = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.nlog
+l = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.nlog
+slog = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.slog
+glog = glog --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.glog
+nlog = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.nlog
+sglog = glog --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.sglog
