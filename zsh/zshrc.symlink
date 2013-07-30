@@ -1,3 +1,5 @@
+bindkey -v
+
 export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:~/bin
 export PATH=/Volumes/WorkHD/Users/jameyd/bin:$PATH
 
