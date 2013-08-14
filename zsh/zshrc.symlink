@@ -1,5 +1,7 @@
 bindkey -v
 
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
 export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:~/bin
 export PATH=/Volumes/WorkHD/Users/jameyd/bin:$PATH
 
@@ -29,6 +31,8 @@ alias bounce_postgres="sudo launchctl unload /Library/LaunchDaemons/com.darkhors
 
 alias bounce_memcache="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.memcached.plist; sudo launchctl load /Library/LaunchDaemons/com.darkhorse.memcached.plist"
 alias bounce_stack="bounce_mysql; bounce_postgres; bounce_apache; bounce_memcache;"
+
+alias fix_open_with='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt. Finder will relaunch."'
 
 alias unpyc='find . -name "*.pyc" | xargs rm'
 
@@ -79,4 +83,3 @@ grep $today /usr/share/calendar/calendar.music
 grep $today /usr/share/calendar/calendar.history
 grep $today /usr/share/calendar/calendar.computer
 grep $today /usr/share/calendar/calendar.birthday
-
