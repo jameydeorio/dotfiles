@@ -1,7 +1,7 @@
 [ui]
 username = Jamey DeOrio <jameyd@darkhorse.com>
 verbose = True
-style = compact
+#style = compact
 
 [diff]
 git = 1
@@ -25,8 +25,8 @@ launch_webbrowser = true
 
 [alias]
 ocd = !echo "\nSTATUS\n---------------"; $HG st; echo "\nOUTGOING\n---------------"; $HG out; echo "\nINCOMING\n---------------"; $HG in; echo;
-log = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.nlog
-l = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.nlog
+log = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.slog
+l = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.slog
 slog = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.slog
 glog = glog --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.glog
 nlog = log --style=/Volumes/WorkHD/Users/jameyd/dotfiles/hg/map-cmdline.nlog
