@@ -1,13 +1,16 @@
 [user]
-    name = Jamey J. DeOrio
-    email = jameyd@darkhorse.com
+name = Jamey J. DeOrio
+email = jameyd@darkhorse.com
+
 [color]
-    ui = true
+ui = true
+
 [alias]
-    st = status
-    co = checkout
-    l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
-    ci = commit
+st = status
+co = checkout
+l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+ci = commit
+log = log --name-status
 
 [hub]
 protocol = https
@@ -17,5 +20,6 @@ helper = /opt/boxen/bin/boxen-git-credential
 
 [core]
 excludesfile = /opt/boxen/config/git/gitignore
+
 [push]
-	default = simple
+default = simple
