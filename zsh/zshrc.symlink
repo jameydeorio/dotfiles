@@ -9,62 +9,20 @@ source ~/.profile
 
 export ZSH=$HOME/dotfiles/oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 #ZSH_THEME="whiteboard"
 ZSH_THEME="darkboard"
 #ZSH_THEME="darkblood"
 
-alias s="subl"
-
-alias apache_start="sudo launchctl load /Library/LaunchDaemons/com.darkhorse.httpd.plist"
-alias apache_stop="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.httpd.plist"
-alias bounce_apache="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.httpd.plist; sudo launchctl load /Library/LaunchDaemons/com.darkhorse.httpd.plist"
-
-alias bounce_mysql="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.mysqld.plist; sudo launchctl load /Library/LaunchDaemons/com.darkhorse.mysqld.plist"
-
-alias pg_start="sudo launchctl load /Library/LaunchDaemons/com.darkhorse.postgresql.plist"
-alias pg_stop="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.postgresql.plist"
-alias bounce_postgres="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.postgresql.plist; sudo launchctl load /Library/LaunchDaemons/com.darkhorse.postgresql.plist"
-
-alias bounce_memcache="sudo launchctl unload /Library/LaunchDaemons/com.darkhorse.memcached.plist; sudo launchctl load /Library/LaunchDaemons/com.darkhorse.memcached.plist"
-alias bounce_stack="bounce_mysql; bounce_postgres; bounce_apache; bounce_memcache;"
-
+# Rebuild the "Open With" right-click menu
 alias fix_open_with='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt. Finder will relaunch."'
 
+# Remove all .pyc files from a tree
 alias unpyc='find . -name "*.pyc" | xargs rm'
 
 alias cddh="cd ~/dev/dh"
 
-alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-alias pgbounce='pgstop && pgstart'
 [ -d /opt/boxen ] && alias pgbounce='killall postgres'
 
-alias mongostart='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
-alias mongostop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
-alias mongobounce='mongostop && mongostart'
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git, mercurial)
 
 source $ZSH/oh-my-zsh.sh
@@ -72,7 +30,6 @@ source $ZSH/oh-my-zsh.sh
 [ -d /opt/boxen ] && source /opt/boxen/homebrew/share/python/virtualenvwrapper.sh
 [ -f /usr/local/share/python/virtualenvwrapper.sh ] && source /usr/local/share/python/virtualenvwrapper.sh
 
-#export EDITOR='subl -w'
 export EDITOR='vim'
 
 export LSCOLORS=ExFxCxDxBxegedabagacad
