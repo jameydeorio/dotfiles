@@ -7,18 +7,27 @@ call vundle#rc()
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'rodjek/vim-puppet'
 
-set guifont=Source\ Code\ Pro\ for\ Powerline
+set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set rtp+={repository_root}/powerline/bindings/vim
 set laststatus=2
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%F
 
 filetype plugin indent on
 
 filetype on
 syntax on
 filetype plugin on
+
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_puppet_checkers=['puppetlint']
 
 let mapleader=","
 
