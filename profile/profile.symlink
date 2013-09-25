@@ -1,0 +1,2 @@
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+[ -f /opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/share/python/virtualenvwrapper.sh ] && source /opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/share/python/virtualenvwrapper.sh
