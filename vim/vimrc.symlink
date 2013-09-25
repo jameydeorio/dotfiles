@@ -12,7 +12,8 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'rodjek/vim-puppet'
 
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+"set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+set guifont=Anonymice\ Powerline:h14
 set rtp+={repository_root}/powerline/bindings/vim
 set laststatus=2
 set statusline+=%#warningmsg#
