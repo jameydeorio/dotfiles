@@ -13,6 +13,7 @@ ci = commit
 log = log --name-status
 in = !BRANCH=$(git symbolic-ref --short HEAD) && git fetch origin && git --no-pager l $BRANCH..origin/$BRANCH
 out = !BRANCH=$(git symbolic-ref --short HEAD) && git fetch origin && git --no-pager l origin/$BRANCH..$BRANCH
+ocd = !echo "INCOMING:" && git in && echo && echo && echo "OUTGOING:" && git out && echo && echo && echo "LOCAL:" && git status --short
 
 [hub]
 protocol = https
