@@ -11,6 +11,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'rodjek/vim-puppet'
+Bundle 'godlygeek/tabular'
+Bundle 'altercation/vim-colors-solarized'
 
 "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
 set guifont=Anonymice\ Powerline:h14
@@ -32,7 +34,13 @@ let g:syntastic_puppet_checkers=['puppetlint']
 
 let mapleader=","
 
-colorscheme slate
+syntax enable
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
 
 " Formatting
 set nu
@@ -74,6 +82,11 @@ map <leader>e :NERDTreeToggle<CR>
 autocmd vimenter * if !argc() | NERDTree | endif 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" puppet ctags stuff
+set kp=pi
+set iskeyword=-,:,@,48-57,_,192-255
+set tags=tags;~/
 
 " Filetype settings
 filetype indent on
