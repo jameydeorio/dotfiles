@@ -1,2 +1,3 @@
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-[ -f /opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/share/python/virtualenvwrapper.sh ] && source /opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/share/python/virtualenvwrapper.sh
+echo ". ~/.profile"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
