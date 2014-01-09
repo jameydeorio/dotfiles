@@ -1,15 +1,29 @@
-bindkey -v
+echo ". ~/.zshrc"
 
-export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:~/bin
+# initial path stuff
+export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:~/bin:$PATH
 export PATH=/Volumes/WorkHD/Users/jameyd/bin:$PATH
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-source ~/.profile
-
-export ZSH=$HOME/dotfiles/oh-my-zsh
-
+# zsh configuration
 #ZSH_THEME="whiteboard"
 ZSH_THEME="darkboard"
-#ZSH_THEME="darkblood"
+export ZSH=$HOME/dotfiles/oh-my-zsh
+plugins=(git, mercurial)
+source $ZSH/oh-my-zsh.sh
+
+# boxen
+source /opt/boxen/env.sh
+
+# Virtualenv Wrapper
+export WORKON_HOME=${HOME}/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=`which python2.7`
+[ -f /opt/boxen/homebrew/bin/virtualenvwrapper.sh ] && source /opt/boxen/homebrew/bin/virtualenvwrapper.sh
+
+# pebble
+[ -d ~/src/pebble_sdk/arm-cs-tools ] && export PATH=~/src/pebble_sdk/arm-cs-tools/bin:$PATH
+alias create_pebble_project=~/src/pebble_sdk/PebbleSDK-1.12/Pebble/tools/create_pebble_project.py\ ~/src/pebble_sdk/PebbleSDK-1.12/Pebble/sdk
+alias create_pebble_project_links_only=~/src/pebble_sdk/PebbleSDK-1.12/Pebble/tools/create_pebble_project.py\ --symlink-only\ ~/src/pebble_sdk/PebbleSDK-1.12/Pebble/sdk
 
 # Rebuild the "Open With" right-click menu
 alias fix_open_with='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt. Finder will relaunch."'
@@ -17,13 +31,12 @@ alias fix_open_with='/System/Library/Frameworks/CoreServices.framework/Versions/
 # Remove all .pyc files from a tree
 alias unpyc='find . -name "*.pyc" | xargs rm'
 
+# other aliases
 alias cddh="cd ~/dev/dh"
-
+alias cdme="cd ~/dev/me"
 [ -d /opt/boxen ] && alias pgbounce='killall postgres'
-
-plugins=(git, mercurial)
-
-source $ZSH/oh-my-zsh.sh
+tree="tree -Drh"
+alias git=git
 
 export EDITOR='vim'
 
@@ -35,3 +48,5 @@ grep $today /usr/share/calendar/calendar.music
 grep $today /usr/share/calendar/calendar.history
 grep $today /usr/share/calendar/calendar.computer
 grep $today /usr/share/calendar/calendar.birthday
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
