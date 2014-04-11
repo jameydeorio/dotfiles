@@ -13,6 +13,19 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
+
+Bundle 'vim-scripts/BusyBee'
+Bundle 'djjcast/mirodark'
+Bundle 'ciaranm/inkpot'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'vim-scripts/darktango.vim'
+Bundle 'nanotech/jellybeans.vim'
+Bundle '29decibel/codeschool-vim-theme'
+Bundle 'sickill/vim-monokai'
+Bundle 'vim-scripts/twilight'
+Bundle 'vim-scripts/phd'
+Bundle 'tomasr/molokai'
 
 "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
 set guifont=Anonymice\ Powerline:h14
@@ -40,7 +53,7 @@ if has('gui_running')
 else
     set background=dark
 endif
-colorscheme solarized
+colorscheme jellybeans
 
 " Formatting
 set nu
@@ -93,9 +106,9 @@ filetype indent on
 au FileType xhtml,html,htm,php,xml,ruby setlocal tabstop=2
 au FileType xhtml,html,htm,php,xml,ruby setlocal shiftwidth=2
 au FileType xhtml,html,htm,php,xml,ruby setlocal softtabstop=2
-au FileType python setlocal tabstop=4
-au FileType python setlocal shiftwidth=4
-au FileType python setlocal softtabstop=4
+au FileType python setlocal tabstop=2
+au FileType python setlocal shiftwidth=2
+au FileType python setlocal softtabstop=2
 
 au FileType c,h,java,js setlocal mps+==:;
 
