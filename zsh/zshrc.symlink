@@ -6,7 +6,6 @@ export PATH=/Volumes/WorkHD/Users/jameyd/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # zsh configuration
-#ZSH_THEME="whiteboard"
 ZSH_THEME="darkboard"
 export ZSH=$HOME/dotfiles/oh-my-zsh
 plugins=(git, mercurial)
@@ -15,10 +14,10 @@ source $ZSH/oh-my-zsh.sh
 # boxen
 source /opt/boxen/env.sh
 
-# Virtualenv Wrapper
+# virtualenvwrapper
 export WORKON_HOME=${HOME}/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=`which python2.7`
-[ -f /opt/boxen/homebrew/bin/virtualenvwrapper.sh ] && source /opt/boxen/homebrew/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=`which python`
+[ -f /opt/boxen/homebrew/share/python/virtualenvwrapper.sh ] && source /opt/boxen/homebrew/share/python/virtualenvwrapper.sh || echo "could not source virtualenvwrapper"
 
 # pebble
 [ -d ~/src/pebble_sdk/arm-cs-tools ] && export PATH=~/src/pebble_sdk/arm-cs-tools/bin:$PATH
