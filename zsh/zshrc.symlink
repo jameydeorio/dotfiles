@@ -36,6 +36,9 @@ alias cdme="cd ~/dev/me"
 [ -d /opt/boxen ] && alias pgbounce='killall postgres'
 tree="tree -Drh"
 alias git=git
+alias mega_deploy_tfaw="pushd ~/dev/dh/tailor && git co master && git pull && workon tailor && fab legacy_deploy:tfaw,staging-admin && fab legacy_deploy:tfaw,staging && fab legacy_deploy:tfaw,production-admin && fab legacy_deploy:tfaw,production && deactivate && popd"
+alias staging_deploy_tfaw="pushd ~/dev/dh/tailor && git co master && git pull && workon tailor && fab legacy_deploy:tfaw,staging-admin && fab legacy_deploy:tfaw,staging && deactivate && popd"
+alias production_deploy_tfaw="pushd ~/dev/dh/tailor && git co master && git pull && workon tailor && fab legacy_deploy:tfaw,production-admin && fab legacy_deploy:tfaw,production && deactivate && popd"
 
 export EDITOR='vim'
 
