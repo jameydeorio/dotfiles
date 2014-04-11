@@ -16,6 +16,8 @@ out = !BRANCH=$(git symbolic-ref --short HEAD) && git fetch origin && git --no-p
 ocd = !echo "INCOMING:" && git in && echo && echo && echo "OUTGOING:" && git out && echo && echo && echo "LOCAL:" && git status --short
 dc = diff --cached
 hist = log --graph --pretty=niceoneline --all --decorate
+cp = cherry-pick
+l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
 
 [pretty]
 niceoneline = format:%C(yellow)%h%C(auto)%d %Creset%s %C(cyan)[%an] %C(blue)%ar
