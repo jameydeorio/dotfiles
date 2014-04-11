@@ -1,3 +1,10 @@
 echo ". ~/.profile"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+ 
+echo "enabling bash completion"
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
