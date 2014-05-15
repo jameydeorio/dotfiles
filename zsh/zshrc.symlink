@@ -11,13 +11,10 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 plugins=(git, mercurial)
 source $ZSH/oh-my-zsh.sh
 
-# boxen
-source /opt/boxen/env.sh
-
 # virtualenvwrapper
 export WORKON_HOME=${HOME}/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=`which python`
-[ -f /opt/boxen/homebrew/share/python/virtualenvwrapper.sh ] && source /opt/boxen/homebrew/share/python/virtualenvwrapper.sh || echo "could not source virtualenvwrapper"
+[ -f /opt/boxen/homebrew/bin/virtualenvwrapper.sh ] && source /opt/boxen/homebrew/bin/virtualenvwrapper.sh || echo "could not source virtualenvwrapper"
 
 # pebble
 [ -d ~/src/pebble_sdk/arm-cs-tools ] && export PATH=~/src/pebble_sdk/arm-cs-tools/bin:$PATH
@@ -33,12 +30,7 @@ alias unpyc='find . -name "*.pyc" | xargs rm'
 # other aliases
 alias cddh="cd ~/dev/dh"
 alias cdme="cd ~/dev/me"
-[ -d /opt/boxen ] && alias pgbounce='killall postgres'
 tree="tree -Drh"
-alias git=git
-alias mega_deploy_tfaw="pushd ~/dev/dh/tailor && git co master && git pull && workon tailor && fab legacy_deploy:tfaw,staging-admin && fab legacy_deploy:tfaw,staging && fab legacy_deploy:tfaw,production-admin && fab legacy_deploy:tfaw,production && deactivate && popd"
-alias staging_deploy_tfaw="pushd ~/dev/dh/tailor && git co master && git pull && workon tailor && fab legacy_deploy:tfaw,staging-admin && fab legacy_deploy:tfaw,staging && deactivate && popd"
-alias production_deploy_tfaw="pushd ~/dev/dh/tailor && git co master && git pull && workon tailor && fab legacy_deploy:tfaw,production-admin && fab legacy_deploy:tfaw,production && deactivate && popd"
 
 export EDITOR='vim'
 
