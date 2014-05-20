@@ -28,9 +28,9 @@ alias fix_open_with='/System/Library/Frameworks/CoreServices.framework/Versions/
 alias unpyc='find . -name "*.pyc" | xargs rm'
 
 # other aliases
-alias cddh="cd ~/dev/dh"
-alias cdme="cd ~/dev/me"
-tree="tree -Drh"
+alias cddh='cd ~/dev/dh'
+alias cdme='cd ~/dev/me'
+alias tree='tree -Csuh'
 
 export EDITOR='vim'
 
