@@ -31,6 +31,7 @@ alias unpyc='find . -name "*.pyc" | xargs rm'
 alias cddh='cd ~/dev/dh'
 alias cdme='cd ~/dev/me'
 alias tree='tree -Csuh'
+alias tagup='ctags -R .'
 
 # DO NOT AUTOCORRECT
 unsetopt correct_all
