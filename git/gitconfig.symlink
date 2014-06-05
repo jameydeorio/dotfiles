@@ -45,6 +45,7 @@ protocol = https
 
 [core]
 excludesfile = /opt/boxen/config/git/gitignore
+	autocrlf = false
 
 [push]
 default = simple
