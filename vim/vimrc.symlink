@@ -17,6 +17,8 @@ Bundle 'jdonaldson/vaxe'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'bling/vim-airline'
+Bundle 'mileszs/ack.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'vim-scripts/BusyBee'
 Bundle 'djjcast/mirodark'
