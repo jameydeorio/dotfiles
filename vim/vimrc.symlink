@@ -4,6 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" coding
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
@@ -20,6 +21,12 @@ Bundle 'bling/vim-airline'
 Bundle 'mileszs/ack.vim'
 Bundle 'kchmck/vim-coffee-script'
 
+"writing
+Bundle 'reedes/vim-pencil'
+Bundle 'reedes/vim-colors-pencil'
+Bundle 'reedes/vim-wordy'
+
+" color schemes
 Bundle 'vim-scripts/BusyBee'
 Bundle 'djjcast/mirodark'
 Bundle 'ciaranm/inkpot'
@@ -51,11 +58,7 @@ let g:syntastic_puppet_checkers=['puppetlint']
 let mapleader=","
 
 syntax enable
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+
 colorscheme jellybeans
 
 " cursors
@@ -209,3 +212,20 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" word processor mode
+func! WordProcessorMode()
+  SoftPencil
+  let g:pencil_higher_contrast_ui = 1 " 0=low, 1=high
+  colorscheme pencil
+  set background=light
+  let g:airline_theme = 'pencil'
+  set thesaurus+=~/.vim/thesaurus/mthesaur.txt
+endfu
+com! WP call WordProcessorMode()
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown call pencil#init()
+  autocmd FileType text call WordProcessorMode()
+augroup END
