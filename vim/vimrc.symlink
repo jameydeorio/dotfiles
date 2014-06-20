@@ -32,7 +32,7 @@ Bundle 'vim-scripts/twilight'
 Bundle 'vim-scripts/phd'
 Bundle 'tomasr/molokai'
 
-set guifont=GohuFont-Medium:h14
+"set guifont=GohuFont-Medium:h14
 set laststatus=2
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
