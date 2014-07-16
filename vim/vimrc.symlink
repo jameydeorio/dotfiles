@@ -78,6 +78,8 @@ set autoindent
 set copyindent
 set backspace=indent,eol,start
 set smartindent
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%>119v.\+/
 
 " Folding
 set foldcolumn=6
@@ -102,12 +104,12 @@ nnoremap <CR> o<Esc>
 
 " Filetype settings
 filetype indent on
-au FileType xhtml,html,htm,php,xml,ruby setlocal tabstop=2
-au FileType xhtml,html,htm,php,xml,ruby setlocal shiftwidth=2
-au FileType xhtml,html,htm,php,xml,ruby setlocal softtabstop=2
-au FileType python setlocal tabstop=2
-au FileType python setlocal shiftwidth=2
-au FileType python setlocal softtabstop=2
+"au FileType xhtml,html,htm,php,xml,ruby setlocal tabstop=2
+"au FileType xhtml,html,htm,php,xml,ruby setlocal shiftwidth=2
+"au FileType xhtml,html,htm,php,xml,ruby setlocal softtabstop=2
+au FileType python setlocal tabstop=4
+au FileType python setlocal shiftwidth=4
+au FileType python setlocal softtabstop=4
 
 au FileType c,h,java,js setlocal mps+==:;
 
@@ -223,9 +225,3 @@ func! WordProcessorMode()
   set thesaurus+=~/.vim/thesaurus/mthesaur.txt
 endfu
 com! WP call WordProcessorMode()
-
-augroup pencil
-  autocmd!
-  autocmd FileType markdown call pencil#init()
-  autocmd FileType text call WordProcessorMode()
-augroup END
