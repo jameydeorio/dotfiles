@@ -44,7 +44,7 @@ protocol = https
 [credential]
 
 [core]
-excludesfile = /opt/boxen/config/git/gitignore
+excludesfile = /Users/jameydeorio/.gitignore
 
 [push]
 default = simple
