@@ -131,10 +131,15 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.pyc$']
 
 """ ctrl-p
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_show_hidden=1
+let g:ctrlp_show_hidden=0
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.pyc$|\.exe$\|\.so$\|\.dat$'
+  \ }
 
 """ tagbar
 nmap <F8> :TagbarToggle<CR>
