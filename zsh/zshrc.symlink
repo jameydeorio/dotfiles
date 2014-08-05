@@ -29,10 +29,13 @@ alias fix_open_with='/System/Library/Frameworks/CoreServices.framework/Versions/
 alias unpyc='find . -name "*.pyc" | xargs rm'
 
 # other aliases
-alias cddh='cd ~/dev/dh'
+alias cdsf='cd ~/dev/sf'
 alias cdme='cd ~/dev/me'
 alias tree='tree -Csuh'
 alias tagup='ctags -R .'
+alias updatedb='sudo /usr/libexec/locate.updatedb'
+alias solr_start='solr /usr/local/Cellar/solr/4.9.0/libexec/example/solr'
+alias workhere='. ve/bin/activate'
 
 # DO NOT AUTOCORRECT
 unsetopt correct_all
