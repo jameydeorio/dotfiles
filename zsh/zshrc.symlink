@@ -9,7 +9,7 @@ export PATH=/Volumes/WorkHD/Users/jameyd/bin:$PATH
 # zsh configuration
 ZSH_THEME="rainbow"
 export ZSH=$HOME/dotfiles/oh-my-zsh
-plugins=(git)
+plugins=(git brew coffee django fabric pip python rails rake rbenv ruby colored-man)
 source $ZSH/oh-my-zsh.sh
 
 # virtualenvwrapper
@@ -34,8 +34,10 @@ alias cdme='cd ~/dev/me'
 alias tree='tree -Csuh'
 alias tagup='ctags -R .'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
-alias solr_start='solr /usr/local/Cellar/solr/4.9.0/libexec/example/solr'
+alias solr_start='solr /usr/local/Cellar/solr/4.8.1/libexec/example/solr'
 alias workhere='. ve/bin/activate'
+
+export GREP_OPTIONS='--color=auto --exclude=*.pyc --exclude=tags --exclude-dir=.git --exclude-dir=.tox'
 
 # DO NOT AUTOCORRECT
 unsetopt correct_all
