@@ -48,3 +48,5 @@ excludesfile = /Users/jameydeorio/.gitignore
 
 [push]
 default = simple
+[diff]
+tool = vimdiff
