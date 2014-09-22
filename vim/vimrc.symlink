@@ -221,8 +221,10 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " word processor mode
 func! WordProcessorMode()
+  set nonu
   SoftPencil
   let g:pencil_higher_contrast_ui = 1 " 0=low, 1=high
+  let g:pencil#wrapModeDefault = 'hard'
   colorscheme pencil
   set background=light
   let g:airline_theme = 'pencil'
