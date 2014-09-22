@@ -137,8 +137,8 @@ let NERDTreeIgnore = ['\.pyc$']
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_show_hidden=0
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
-  \ 'file': '\.pyc$|\.exe$\|\.so$\|\.dat$'
+  \ 'dir':  '\v[\/]\.(git|hg|svn|yardoc|public\/images|public\/system|data|log|tmp)$',
+  \ 'file': '\v\.(pyc|exe|so|dat)$'
   \ }
 
 """ tagbar
