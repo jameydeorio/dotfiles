@@ -9,3 +9,5 @@
 *.rbc
 
 tags
+
+.floo*

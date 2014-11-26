@@ -3,13 +3,15 @@ echo ". ~/.zshrc"
 # initial path stuff
 export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:~/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
+export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 eval "$(rbenv init - zsh)"
-PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
+eval "$(chef shell-init zsh)"
+export PATH=$HOME/.chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/bin:$PATH
 
 # zsh configuration
-ZSH_THEME="rainbow-summer"
+ZSH_THEME="rainy-autumn"
 export ZSH=$HOME/dotfiles/oh-my-zsh
-plugins=(git brew coffee django fabric pip python rails rake rbenv ruby colored-man)
+plugins=(git brew coffee fabric pip python rails rake ruby colored-man)
 source $ZSH/oh-my-zsh.sh
 
 # virtualenvwrapper
@@ -34,7 +36,6 @@ alias cdme='cd ~/dev/me'
 alias tree='tree -Csuh'
 alias tagup='ctags -R .'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
-alias solr_start='solr /usr/local/Cellar/solr/4.8.1/libexec/example/solr'
 alias workhere='. ve/bin/activate'
 
 export GREP_OPTIONS='--color=auto --exclude=*.pyc --exclude=tags --exclude-dir=.git --exclude-dir=.tox'
@@ -53,5 +54,4 @@ grep $today /usr/share/calendar/calendar.history
 grep $today /usr/share/calendar/calendar.computer
 grep $today /usr/share/calendar/calendar.birthday
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\$PWD\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
