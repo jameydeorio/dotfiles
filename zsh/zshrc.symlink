@@ -31,6 +31,7 @@ alias fix_open_with='/System/Library/Frameworks/CoreServices.framework/Versions/
 alias unpyc='find . -name "*.pyc" | xargs rm'
 
 # other aliases
+alias ls='ls -G1'
 alias cdsf='cd ~/dev/sf'
 alias cdme='cd ~/dev/me'
 alias tree='tree -Csuh'

@@ -232,3 +232,6 @@ func! WordProcessorMode()
   set thesaurus+=~/.vim/thesaurus/mthesaur.txt
 endfu
 com! WP call WordProcessorMode()
+
+
+let g:netrw_liststyle=3
