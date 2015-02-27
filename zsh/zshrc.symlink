@@ -5,13 +5,13 @@ export PATH=/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin
 export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 eval "$(rbenv init - zsh)"
-eval "$(chef shell-init zsh)"
 export PATH=$HOME/.chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/bin:$PATH
 
 # zsh configuration
-ZSH_THEME="rainy-autumn"
+#ZSH_THEME="rainy-autumn"
+ZSH_THEME="sunaku"
 export ZSH=$HOME/dotfiles/oh-my-zsh
-plugins=(git brew coffee fabric pip python rails rake ruby colored-man)
+plugins=(vi-mode git brew coffee fabric pip python rails rake ruby colored-man)
 source $ZSH/oh-my-zsh.sh
 
 # virtualenvwrapper
@@ -28,7 +28,7 @@ alias create_pebble_project_links_only=~/src/pebble_sdk/PebbleSDK-1.12/Pebble/to
 alias fix_open_with='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt. Finder will relaunch."'
 
 # Remove all .pyc files from a tree
-alias unpyc='find . -name "*.pyc" | xargs rm'
+alias unpyc='find . -name "*.pyc" -delete'
 
 # other aliases
 alias ls='ls -G1'
@@ -54,5 +54,6 @@ grep $today /usr/share/calendar/calendar.music
 grep $today /usr/share/calendar/calendar.history
 grep $today /usr/share/calendar/calendar.computer
 grep $today /usr/share/calendar/calendar.birthday
+echo
 
 #export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\$PWD\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
