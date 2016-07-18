@@ -1,4 +1,7 @@
 --ignore-dir=.tox
+--ignore-dir=.vagrant
+--ignore-dir=.idea
+--ignore-dir=storage
 --ignore-dir=ve
 --ignore-dir=dist
 --ignore-file=is:tags

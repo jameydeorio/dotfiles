@@ -22,6 +22,9 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'fatih/vim-go'
+Plugin 'tclem/vim-arduino'
 
 " writing
 Plugin 'reedes/vim-pencil'
@@ -140,7 +143,7 @@ let NERDTreeIgnore = ['\.pyc$']
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_show_hidden=0
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|yardoc|public\/images|public\/system|data|log|tmp)$',
+  \ 'dir':  '\v[\/][\.]?(git|hg|svn|yardoc|public\/images|storage|public\/system|data|log|tmp)$',
   \ 'file': '\v\.(pyc|exe|so|dat)$'
   \ }
 
@@ -235,5 +238,8 @@ func! WordProcessorMode()
 endfu
 com! WP call WordProcessorMode()
 
+" arduino
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
 
 let g:netrw_liststyle=3
