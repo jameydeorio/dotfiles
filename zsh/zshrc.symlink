@@ -6,17 +6,19 @@ export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
-eval "$(rbenv init - zsh)"
+#eval "$(rbenv init - zsh)"
 #eval "$(docker-machine env default)"
 #export PATH=$HOME/.chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/bin:$PATH
 
 # zsh configuration
 #ZSH_THEME="rainbow-spring"
 #ZSH_THEME="rainy-autumn"
-ZSH_THEME="floral-spring"
+#ZSH_THEME="floral-spring"
 #ZSH_THEME="sunaku"
+ZSH_THEME="af-magic"
+#ZSH_THEME="avit"
 export ZSH=$HOME/dotfiles/oh-my-zsh
-plugins=(vi-mode git brew coffee fabric pip python rails rake ruby colored-man)
+plugins=(vi-mode)
 source $ZSH/oh-my-zsh.sh
 bindkey -M vicmd '/' history-incremental-search-backward
 
@@ -24,11 +26,6 @@ bindkey -M vicmd '/' history-incremental-search-backward
 export WORKON_HOME=${HOME}/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=`which python`
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh || echo "could not source virtualenvwrapper"
-
-# pebble
-[ -d ~/src/pebble_sdk/arm-cs-tools ] && export PATH=~/src/pebble_sdk/arm-cs-tools/bin:$PATH
-alias create_pebble_project=~/src/pebble_sdk/PebbleSDK-1.12/Pebble/tools/create_pebble_project.py\ ~/src/pebble_sdk/PebbleSDK-1.12/Pebble/sdk
-alias create_pebble_project_links_only=~/src/pebble_sdk/PebbleSDK-1.12/Pebble/tools/create_pebble_project.py\ --symlink-only\ ~/src/pebble_sdk/PebbleSDK-1.12/Pebble/sdk
 
 # Rebuild the "Open With" right-click menu
 alias fix_open_with='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt. Finder will relaunch."'
@@ -38,7 +35,7 @@ alias unpyc='find . -name "*.pyc" -delete'
 
 # Other aliases
 alias ls='ls -G1'
-alias cdsf='cd ~/dev/sf'
+alias cdorm='cd ~/dev/orm'
 alias cdme='cd ~/dev/me'
 alias tree='tree -Csuh'
 alias tagup='ctags -R .'
@@ -48,6 +45,12 @@ alias workhere='. ve/bin/activate'
 alias clean_docker_images='docker rmi $(docker images -aq -f "dangling=true")'
 alias darth="say 'No-o-o' -r 5"
 alias hs='history | grep '
+alias g='git'
+alias ptm='py.test -x --no-cov-on-fail'
+alias pt='py.test -x --nomigrations --no-cov-on-fail'
+alias ptd='py.test -s -x --nomigrations --no-cov-on-fail'
+alias weather='curl wttr.in'
+alias moon='curl wttr.in/moon'
 
 alias dockerstop='docker stop `docker ps -q`'
 
@@ -83,4 +86,3 @@ grep $today /usr/share/calendar/calendar.computer
 grep $today /usr/share/calendar/calendar.birthday
 echo
 
-#export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\$PWD\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"

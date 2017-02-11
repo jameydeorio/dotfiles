@@ -43,6 +43,7 @@ Plugin 'sickill/vim-monokai'
 Plugin 'vim-scripts/twilight'
 Plugin 'vim-scripts/phd'
 Plugin 'tomasr/molokai'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
